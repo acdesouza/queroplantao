@@ -1,4 +1,8 @@
 PegaMedico::Application.routes.draw do
+  resources :plantoes
+
+  root :to => 'plantoes#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Where:</b>
+  <%= @planto.where %>
+</p>
+
+<p>
+  <b>When:</b>
+  <%= @planto.when %>
+</p>
+
+<p>
+  <b>How much:</b>
+  <%= @planto.how_much %>
+</p>
+
+<p>
+  <b>How long:</b>
+  <%= @planto.how_long %>
+</p>
+
+<p>
+  <b>Specialty:</b>
+  <%= @planto.specialty %>
+</p>
+
+<p>
+  <b>Contactname:</b>
+  <%= @planto.contactName %>
+</p>
+
+<p>
+  <b>Contactphone:</b>
+  <%= @planto.contactPhone %>
+</p>
+
+<p>
+  <b>Obs:</b>
+  <%= @planto.obs %>
+</p>
+
+
+<%= link_to 'Edit', edit_planto_path(@planto) %> |
+<%= link_to 'Back', plantoes_path %>

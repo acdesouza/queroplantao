@@ -1,0 +1,37 @@
+<h1>Listing plantoes</h1>
+
+<table>
+  <tr>
+    <th>Where</th>
+    <th>When</th>
+    <th>How much</th>
+    <th>How long</th>
+    <th>Specialty</th>
+    <th>Contactname</th>
+    <th>Contactphone</th>
+    <th>Obs</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @plantoes.each do |planto| %>
+  <tr>
+    <td><%= planto.where %></td>
+    <td><%= planto.when %></td>
+    <td><%= planto.how_much %></td>
+    <td><%= planto.how_long %></td>
+    <td><%= planto.specialty %></td>
+    <td><%= planto.contactName %></td>
+    <td><%= planto.contactPhone %></td>
+    <td><%= planto.obs %></td>
+    <td><%= link_to 'Show', planto %></td>
+    <td><%= link_to 'Edit', edit_planto_path(planto) %></td>
+    <td><%= link_to 'Destroy', planto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Plantao', new_planto_path %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  where: 
+  when: 
+  how_much: 1
+  how_long: 1
+  specialty: 
+  contactName: 
+  contactPhone: 
+  obs: MyText
+
+two:
+  where: 
+  when: 
+  how_much: 1
+  how_long: 1
+  specialty: 
+  contactName: 
+  contactPhone: 
+  obs: MyText

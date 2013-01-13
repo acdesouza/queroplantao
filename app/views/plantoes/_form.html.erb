@@ -1,0 +1,49 @@
+<%= form_for(@planto) do |f| %>
+  <% if @planto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@planto.errors.count, "error") %> prohibited this planto from being saved:</h2>
+
+      <ul>
+      <% @planto.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :where %><br />
+    <%= f.text_field :where %>
+  </div>
+  <div class="field">
+    <%= f.label :when %><br />
+    <%= f.text_field :when %>
+  </div>
+  <div class="field">
+    <%= f.label :how_much %><br />
+    <%= f.number_field :how_much %>
+  </div>
+  <div class="field">
+    <%= f.label :how_long %><br />
+    <%= f.number_field :how_long %>
+  </div>
+  <div class="field">
+    <%= f.label :specialty %><br />
+    <%= f.text_field :specialty %>
+  </div>
+  <div class="field">
+    <%= f.label :contactName %><br />
+    <%= f.text_field :contactName %>
+  </div>
+  <div class="field">
+    <%= f.label :contactPhone %><br />
+    <%= f.text_field :contactPhone %>
+  </div>
+  <div class="field">
+    <%= f.label :obs %><br />
+    <%= f.text_area :obs %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
