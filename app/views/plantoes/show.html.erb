@@ -2,7 +2,8 @@
 <% if notice %>
   <h3>Mensagem para o WhatsApp</h3>
   <p>
-    <%= "#{@plantao.where}, #{l @plantao.when, :format => :short}. R$#{@plantao.how_much}. #{@plantao.how_long}h. #{@plantao.specialty}. #{@plantao.obs}. #{link_to('Contato no site', @plantao)}" %>
+    <%= "#{@plantao.where}, #{l @plantao.when, :format => :short}. R$#{@plantao.how_much}. #{@plantao.how_long}h. #{@plantao.specialty}. #{@plantao.obs}" %><br />
+    <%= link_to('Contato no site', @plantao) %>
   </p>
 <% end %>
 
