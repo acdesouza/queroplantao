@@ -1,15 +1,12 @@
 <h1>Plantões esperando médicos</h1>
 
 <ul>
-<% @plantoes.each do |plantao| %>
-  <li><%= "#{plantao.where}, #{l plantao.when, :format => :short}. R$#{plantao.how_much}.
-  #{plantao.how_long}h. #{plantao.specialty}. #{plantao.obs}. " %><%= link_to('Contato no site', plantao) %>
-    <%= link_to 'Show', plantao %>
-    <%= link_to 'Edit', edit_plantao_path(plantao) %>
-    <%= link_to 'Destroy', plantao, method: :delete, data: { confirm: 'Are you sure?' } %>
-</li>
-<% end %>
+  <% @plantoes.each do |plantao| %>
+    <li>
+      <%= "#{plantao.where}, #{l plantao.when, :format => :short}. R$#{plantao.how_much}. #{plantao.how_long}h. #{plantao.specialty}. Dúvidas: #{plantao.contactName}, telefone: #{plantao.contactPhone}. #{plantao.obs}. " %>
+    </li>
+  <% end %>
 </ul>
 <br />
 
-<%= link_to 'New Plantao', new_plantao_path %>
+<%= link_to 'Anuncie', new_plantao_path %>
