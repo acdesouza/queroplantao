@@ -1,10 +1,10 @@
-<%= form_for(@planto) do |f| %>
-  <% if @planto.errors.any? %>
+<%= form_for(@plantao) do |f| %>
+  <% if @plantao.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@planto.errors.count, "error") %> prohibited this planto from being saved:</h2>
+      <h2><%= pluralize(@plantao.errors.count, "error") %> prohibited this plantao from being saved:</h2>
 
       <ul>
-      <% @planto.errors.full_messages.each do |msg| %>
+      <% @plantao.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

@@ -1,45 +1,52 @@
 <p id="notice"><%= notice %></p>
+<% if notice %>
+  <h3>Mensagem para o WhatsApp</h3>
+<p>
+  <%= "#{@plantao.where}, #{l @plantao.when, :format => :short}. R$#{@plantao.how_much}.
+  #{@plantao.how_long}h. #{@plantao.specialty}. #{@plantao.obs}. " %><%= link_to('Contato no site', @plantao) %>
+</p>
+<% end %>
 
 <p>
   <b>Where:</b>
-  <%= @planto.where %>
+  <%= @plantao.where %>
 </p>
 
 <p>
   <b>When:</b>
-  <%= @planto.when %>
+  <%= @plantao.when %>
 </p>
 
 <p>
   <b>How much:</b>
-  <%= @planto.how_much %>
+  <%= @plantao.how_much %>
 </p>
 
 <p>
   <b>How long:</b>
-  <%= @planto.how_long %>
+  <%= @plantao.how_long %>
 </p>
 
 <p>
   <b>Specialty:</b>
-  <%= @planto.specialty %>
+  <%= @plantao.specialty %>
 </p>
 
 <p>
   <b>Contactname:</b>
-  <%= @planto.contactName %>
+  <%= @plantao.contactName %>
 </p>
 
 <p>
   <b>Contactphone:</b>
-  <%= @planto.contactPhone %>
+  <%= @plantao.contactPhone %>
 </p>
 
 <p>
   <b>Obs:</b>
-  <%= @planto.obs %>
+  <%= @plantao.obs %>
 </p>
 
 
-<%= link_to 'Edit', edit_planto_path(@planto) %> |
+<%= link_to 'Edit', edit_plantao_path(@plantao) %> |
 <%= link_to 'Back', plantoes_path %>
