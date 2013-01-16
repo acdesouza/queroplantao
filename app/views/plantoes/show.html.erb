@@ -7,11 +7,6 @@
   </p>
 <% end %>
 
-<p>
-  <%= "#{@plantao.where}, #{l @plantao.when, :format => :short}. R$#{@plantao.how_much}. #{@plantao.how_long}h. #{@plantao.specialty}. #{@plantao.obs}." %><br />
-  Dúvidas? <br />
-  <%= @plantao.contactName %>
-  <%= @plantao.contactPhone %>
-</p>
+<%= render @plantao%>
 
 <%= link_to 'Voltar para os anúncios', plantoes_path %>

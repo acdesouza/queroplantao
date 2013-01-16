@@ -1,21 +1,6 @@
 <h1>Plantões esperando médicos</h1>
 
-<% @plantoes.each do |plantao| %>
-  <article itemscope itemtype="http://schema.org/JobPosting">
-    <p><%= plantao.where %>
-    <%= l plantao.when, :format => :short %>
-    <span itemprop="salaryCurrency" content="BRL">R$</span><span itemprop="baseSalary"><%= plantao.how_much %></span>.
-    <span itemprop="workHours"><%= plantao.how_long %> horas</span>.
-    <%= plantao.specialty %><br />
-    <span itemscope itemtype="http://schema.org/ContactPoint">
-      Tratar com: <span itemprop="name"><%= plantao.contactName %></span>,
-      telefone: <span itemprop="telephone"><%= plantao.contactPhone %></span>.
-    </span>
-    <%= plantao.obs %>
-  </p>
-  <time itemprop="datePosted" datetime="<%=plantao.created_at%>"><%= link_to "Postado há #{distance_of_time_in_words plantao.created_at, Time.now}", plantao, :itemprop=>"url" %></time>
-</article>
-<% end %>
+<%= render @plantoes %>
 <br />
 
 <%= link_to 'Anuncie', new_plantao_path %>
