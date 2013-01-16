@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :when %><br />
-    <%= f.text_field :when %>
+    <%= f.date_select :when, :start_year => Time.now.year %>
   </div>
   <div class="field">
     <%= f.label :how_much %><br />
@@ -37,7 +37,7 @@
   </div>
   <div class="field">
     <%= f.label :contactPhone %><br />
-    <%= f.text_field :contactPhone %>
+    <%= f.telephone_field :contactPhone %>
   </div>
   <div class="field">
     <%= f.label :obs %><br />

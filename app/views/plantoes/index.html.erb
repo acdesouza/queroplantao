@@ -3,12 +3,15 @@
 <ul>
   <% @plantoes.each do |plantao| %>
     <li>
-      <%= "#{plantao.where}, #{l plantao.when, :format => :short}. R$#{plantao.how_much}. #{plantao.how_long}h. #{plantao.specialty}. Dúvidas: #{plantao.contactName}, telefone: #{plantao.contactPhone}. #{plantao.obs}. " %>
+      <p><%= "#{plantao.where}, #{l plantao.when, :format => :short}. R$#{plantao.how_much}. #{plantao.how_long}h. #{plantao.specialty}." %><br />
+      <%= "Dúvidas: #{plantao.contactName}, telefone: #{plantao.contactPhone}. #{plantao.obs}" %></p>
+      <p>Postado há <%= distance_of_time_in_words plantao.created_at, Time.now %></p>
     </li>
   <% end %>
 </ul>
 <br />
 
 <%= link_to 'Anuncie', new_plantao_path %>
-<br><br>
+<br />
+<br />
 <div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>
