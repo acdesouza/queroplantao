@@ -1,9 +1,13 @@
-<h1>Plantões esperando médicos</h1>
+<div class="row-fluid">
+  <h2>Plantões esperando médicos</h2>
 
-<%= render @plantoes %>
-<br />
+  <table class="table table-striped">
+    <%= render @plantoes %>
+  </table>
+  <br />
 
-<%= link_to 'Anuncie', new_plantao_path %>
-<br />
-<br />
-<div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>
+  <%= link_to 'Anuncie', new_plantao_path, class: "btn btn-large btn-primary" %>
+  <br />
+  <br />
+  <div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>
+</div>

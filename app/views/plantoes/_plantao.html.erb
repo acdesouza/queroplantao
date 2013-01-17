@@ -1,3 +1,5 @@
+<tr>
+<td>
 <article itemscope itemtype="http://schema.org/JobPosting">
   <p><%= plantao.where %>
   <%= l plantao.when, :format => :short %>
@@ -12,3 +14,5 @@
 </p>
 <time itemprop="datePosted" datetime="<%=plantao.created_at%>"><%= link_to "Postado há #{distance_of_time_in_words plantao.created_at, Time.now}", plantao, :itemprop=>"url" %></time>
 </article>
+</td>
+</tr>

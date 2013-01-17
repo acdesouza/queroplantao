@@ -1,49 +1,51 @@
 <%= form_for(@plantao) do |f| %>
-  <% if @plantao.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@plantao.errors.count, "error") %> prohibited this plantao from being saved:</h2>
+  <fieldset>
+    <% if @plantao.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@plantao.errors.count, "error") %> prohibited this plantao from being saved:</h2>
 
-      <ul>
-      <% @plantao.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <ul>
+          <% @plantao.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :where %><br />
+      <%= f.text_field :where %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :where %><br />
-    <%= f.text_field :where %>
-  </div>
-  <div class="field">
-    <%= f.label :when %><br />
-    <%= f.date_select :when, :start_year => Time.now.year %>
-  </div>
-  <div class="field">
-    <%= f.label :how_much %><br />
-    <%= f.number_field :how_much %>
-  </div>
-  <div class="field">
-    <%= f.label :how_long %><br />
-    <%= f.select :how_long, [12, 24] %> horas
-  </div>
-  <div class="field">
-    <%= f.label :specialty %><br />
-    <%= f.text_field :specialty %>
-  </div>
-  <div class="field">
-    <%= f.label :contactName %><br />
-    <%= f.text_field :contactName %>
-  </div>
-  <div class="field">
-    <%= f.label :contactPhone %><br />
-    <%= f.telephone_field :contactPhone %>
-  </div>
-  <div class="field">
-    <%= f.label :obs %><br />
-    <%= f.text_area :obs %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field">
+      <%= f.label :when %><br />
+      <%= f.date_select :when, :start_year => Time.now.year %>
+    </div>
+    <div class="field">
+      <%= f.label :how_much %><br />
+      <%= f.number_field :how_much %>
+    </div>
+    <div class="field">
+      <%= f.label :how_long %><br />
+      <%= f.select :how_long, [12, 24] %> horas
+    </div>
+    <div class="field">
+      <%= f.label :specialty %><br />
+      <%= f.text_field :specialty %>
+    </div>
+    <div class="field">
+      <%= f.label :contactName %><br />
+      <%= f.text_field :contactName %>
+    </div>
+    <div class="field">
+      <%= f.label :contactPhone %><br />
+      <%= f.telephone_field :contactPhone %>
+    </div>
+    <div class="field">
+      <%= f.label :obs %><br />
+      <%= f.text_area :obs, :rows => 5 %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </fieldset>
 <% end %>
