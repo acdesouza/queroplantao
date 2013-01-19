@@ -16,3 +16,7 @@
 
 # Ignore ruby versions
 .ruby-version
+
+# Ignore compiled assets
+public/assets/
+

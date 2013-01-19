@@ -38,7 +38,7 @@ function fb_login(){
     },{scope: 'email,publish_stream, sms'});
 }
 
-var members = []
+var members = [];
 function getGroupMembersIds() {
     if (members.length > 0) {
         return members;
@@ -62,7 +62,7 @@ function getGroupMembersIds() {
 function sendRequestToRecipients(plantaoUrl) {
     FB.ui({method: 'apprequests',
         message: 'Novo plantão adicionado.',
-        redirect_uri: plantaoUrl
+        redirect_uri: plantaoUrl,
         to: getGroupMembersIds()
     }, requestCallback);
 }
