@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-PegaMedico::Application.load_tasks
+QueroPlantao::Application.load_tasks

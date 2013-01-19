@@ -1,4 +1,4 @@
-PegaMedico::Application.routes.draw do
+QueroPlantao::Application.routes.draw do
   resources :plantoes
 
   root :to => 'plantoes#index'
