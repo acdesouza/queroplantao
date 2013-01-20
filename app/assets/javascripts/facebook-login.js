@@ -38,32 +38,24 @@ function fb_login(){
     },{scope: 'email,publish_stream, sms'});
 }
 
-var members = [];
-function getGroupMembersIds() {
-    if (members.length > 0) {
-        return members;
-    }
 
+// http://developers.facebook.com/docs/reference/api/group/
+function sendRequestToRecipients(plantaoUrl) {
     //Grupo, PLANTÕES Whatsapp RJ: 132347300260952
     //Grupo, Quero Plantao: 319924641441589
-    var members = [];
     FB.api('319924641441589/members', {limit: 0}, function (response) {
         var total = response.data.length;
+        var members = [];
         for(var i=0; i < total; i++) {
             var member = response.data[i];
             members[members.length] = member.id;
         }
+        FB.ui({method: 'apprequests',
+            message: 'Novo plantão adicionado.',
+            redirect_uri: plantaoUrl,
+            to: members
+        }, function (response) {
+            console.log(response);
+        });
     });
-
-    return members;
 }
-
-// http://developers.facebook.com/docs/reference/api/group/
-function sendRequestToRecipients(plantaoUrl) {
-    FB.ui({method: 'apprequests',
-        message: 'Novo plantão adicionado.',
-        redirect_uri: plantaoUrl,
-        to: getGroupMembersIds()
-    }, requestCallback);
-}
-
