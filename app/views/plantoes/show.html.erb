@@ -4,10 +4,17 @@
   <h3>Mensagem para o WhatsApp</h3>
   <p>
     <%= "#{@plantao.where}, #{l @plantao.when, :format => :short}. R$#{@plantao.how_much}. #{@plantao.how_long}h. #{@plantao.specialty}. #{@plantao.obs}" %><br />
-    Contato no site: <%= plantao_path @plantao %>
+    Contato no site: <%= plantao_url @plantao %>
   </p>
   <% content_for :javascript do %>
-    sendRequestToRecipients('<%= plantao_path @plantao %>');
+    <script type="text/javascript">
+      $(document).live("facebook:ready", function() {
+          FACEBOOK.login();
+      });
+      $(document).live("facebook:logged", function() {
+          FACEBOOK.sendRequestToRecipients('<%= plantao_url @plantao %>');
+      });
+    </script>
   <% end %>
 <% end %>
 
