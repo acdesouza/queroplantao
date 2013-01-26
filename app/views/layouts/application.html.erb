@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>Quero Plantão :: <%= content_for :title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -9,15 +10,30 @@
   </head>
   <body>
 
-    <div class="container-fluid">
-      <div id="user_nav">
-        <% if current_user %>
-          Signed in as <strong><%= current_user.name %></strong>!
-          <%= link_to "Sign out", signout_path, id: "sign_out" %>
-        <% else %>
-          <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-        <% end %>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Quero Plantão</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav pull-right">
+              <% if current_user %>
+                <li><a href="#">Conectado, pelo Facebook, como <strong><%= current_user.name %></strong></a></li>
+                <li><%= link_to "Sair", signout_path, id: "sign_out" %></li>
+              <% else %>
+                <li><%= link_to "Entrar com o Facebook", "/auth/facebook", id: "sign_in" %></li>
+              <% end %>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
       </div>
+    </div>
+
+    <div class="container">
       <%= yield %>
     </div>
 
