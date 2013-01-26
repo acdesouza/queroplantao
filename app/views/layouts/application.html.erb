@@ -34,10 +34,18 @@
     </div>
 
     <div class="container">
-      <%= yield %>
+      <div class="row">
+        <div class="span8">
+          <%= yield %>
+        </div>
+        <div class="span3">
+          <p><%= link_to 'Anuncie um plantão', new_plantao_path, class: "btn btn-large btn-primary" %></p>
+          <div class="thumbnail fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>
+          <div id="fb-root"></div>
+        </div>
+      </div>
     </div>
 
-    <div id="fb-root"></div>
     <%= content_for :javascript %>
   </body>
 </html>
