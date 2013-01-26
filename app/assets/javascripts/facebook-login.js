@@ -7,6 +7,7 @@
     ref.parentNode.insertBefore(js, ref);
 }(document));
 
+//http://pivotallabs.com/working-with-asynchronously-loaded-javascript/
 $(document).ready(function(){
     function facebookReady(){
         FB.init({
@@ -15,6 +16,7 @@ $(document).ready(function(){
             status     : true, // check login status
             cookie     : true, // enable cookies to allow the server to access the session
             xfbml      : true  // parse XFBML
+            // http://developers.facebook.com/docs/reference/dialogs/requests/
             //, frictionlessRequests : true //FIXME do not require user action
         });
         $(document).trigger("facebook:ready");
