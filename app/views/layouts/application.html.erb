@@ -9,18 +9,17 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>
+          </button>
           <a class="brand" href="#">Quero Plantão</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav pull-right">
+          <div class="nav-collapse collapse" id="main-menu">
+            <ul class="nav pull-right" id="main-menu-right">
               <% if current_user %>
                 <li><a href="#">Conectado, pelo Facebook, como <strong><%= current_user.name %></strong></a></li>
                 <li><%= link_to "Sair", signout_path, id: "sign_out" %></li>
