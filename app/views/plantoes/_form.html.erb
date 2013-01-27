@@ -1,4 +1,4 @@
-<%= form_for(@plantao) do |f| %>
+<%= form_for @plantao, :class => 'form-horizontal'  do |f| %>
   <fieldset>
     <% if @plantao.errors.any? %>
       <div id="error_explanation">
@@ -12,40 +12,42 @@
       </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label :where %><br />
+    <div class="control-group">
+      <%= f.label :where %>
       <%= f.text_field :where %>
     </div>
-    <div class="field">
-      <%= f.label :when %><br />
-      <%= f.date_select :when, :start_year => Time.now.year %>
+    <div class="control-group">
+      <%= f.label :when %>
+      <%= f.date_select :when, {:start_year => Time.now.year}, {:class => 'span1'} %>
     </div>
-    <div class="field">
-      <%= f.label :how_much %><br />
+    <div class="control-group input-prepend">
+      <%= f.label :how_much %>
+      <span class="add-on">R$</span>
       <%= f.number_field :how_much %>
     </div>
-    <div class="field">
-      <%= f.label :how_long %><br />
-      <%= f.select :how_long, [12, 24] %> horas
+    <div class="control-group input-append">
+      <%= f.label :how_long %>
+      <%= f.select :how_long, [12, 24], {}, {:class => 'span1'} %>
+      <span class="add-on">horas</span>
     </div>
-    <div class="field">
-      <%= f.label :specialty %><br />
+    <div class="control-group">
+      <%= f.label :specialty %>
       <%= f.text_field :specialty %>
     </div>
-    <div class="field">
-      <%= f.label :contactName %><br />
+    <div class="control-group">
+      <%= f.label :contactName %>
       <%= f.text_field :contactName %>
     </div>
-    <div class="field">
-      <%= f.label :contactPhone %><br />
+    <div class="control-group">
+      <%= f.label :contactPhone %>
       <%= f.telephone_field :contactPhone %>
     </div>
-    <div class="field">
-      <%= f.label :obs %><br />
-      <%= f.text_area :obs, :rows => 5 %>
+    <div class="control-group">
+      <%= f.label :obs %>
+      <%= f.text_area :obs, :rows => 3 %>
     </div>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit :class => 'btn' %>
     </div>
   </fieldset>
 <% end %>
