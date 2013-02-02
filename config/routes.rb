@@ -1,10 +1,12 @@
 QueroPlantao::Application.routes.draw do
+
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :users
   resources :plantoes
+  resources :users, :only => [:show]
 
   root :to => 'plantoes#index'
 

@@ -21,7 +21,7 @@
           <div class="nav-collapse collapse" id="main-menu">
             <ul class="nav pull-right" id="main-menu-right">
               <% if current_user %>
-                <li><a href="#">Conectado, pelo Facebook, como <strong><%= current_user.name %></strong></a></li>
+                <li><%= link_to current_user.name, user_path(current_user) %></li>
                 <li><%= link_to "Sair", signout_path, id: "sign_out" %></li>
               <% else %>
                 <li><%= link_to "Entrar com o Facebook", "/auth/facebook", id: "sign_in" %></li>
