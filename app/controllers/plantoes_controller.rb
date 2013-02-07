@@ -3,7 +3,7 @@ class PlantoesController < ApplicationController
   # GET /plantoes
   # GET /plantoes.json
   def index
-    @plantoes = Plantao.all
+    @plantoes = Plantao.to_come
 
     respond_to do |format|
       format.html # index.html.erb

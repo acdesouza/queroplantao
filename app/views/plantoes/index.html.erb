@@ -1,4 +1,9 @@
-<h1>Plantões esperando médicos</h1>
-<table class="table table-striped">
-  <%= render @plantoes %>
-</table>
+<% if @plantoes.empty? %>
+  <h1>Nenhum plantão em aberto.</h1>
+<% else %>
+  <h1>Plantões esperando médicos</h1>
+  <table class="table table-striped">
+    <%= render @plantoes %>
+  </table>
+<% end %>
+<p>Curta <a href="http://www.facebook.com/QueroPlantao">nossa página no facebook</a>, e receba notificações de plantões assim que eles forem anunciados.</p>
