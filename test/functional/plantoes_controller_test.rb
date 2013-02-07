@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PlantoesControllerTest < ActionController::TestCase
   setup do
-    @planto = plantoes(:one)
+    @plantao = plantoes(:one)
   end
 
   test "should get index" do
@@ -16,32 +16,32 @@ class PlantoesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create planto" do
+  test "should create plantao" do
     assert_difference('Plantao.count') do
-      post :create, planto: { contactName: @planto.contactName, contactPhone: @planto.contactPhone, how_long: @planto.how_long, how_much: @planto.how_much, obs: @planto.obs, specialty: @planto.specialty, when: @planto.when, where: @planto.where }
+      post :create, plantao: { contactName: @plantao.contactName, contactPhone: @plantao.contactPhone, how_long: @plantao.how_long, how_much: @plantao.how_much, obs: @plantao.obs, specialty: @plantao.specialty, when: @plantao.when, where: @plantao.where }
     end
 
-    assert_redirected_to planto_path(assigns(:planto))
+    assert_redirected_to plantao_path(assigns(:plantao))
   end
 
-  test "should show planto" do
-    get :show, id: @planto
+  test "should show plantao" do
+    get :show, id: @plantao
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @planto
+    get :edit, id: @plantao
     assert_response :success
   end
 
-  test "should update planto" do
-    put :update, id: @planto, planto: { contactName: @planto.contactName, contactPhone: @planto.contactPhone, how_long: @planto.how_long, how_much: @planto.how_much, obs: @planto.obs, specialty: @planto.specialty, when: @planto.when, where: @planto.where }
-    assert_redirected_to planto_path(assigns(:planto))
+  test "should update plantao" do
+    put :update, id: @plantao, plantao: { contactName: @plantao.contactName, contactPhone: @plantao.contactPhone, how_long: @plantao.how_long, how_much: @plantao.how_much, obs: @plantao.obs, specialty: @plantao.specialty, when: @plantao.when, where: @plantao.where }
+    assert_redirected_to plantao_path(assigns(:plantao))
   end
 
-  test "should destroy planto" do
+  test "should destroy plantao" do
     assert_difference('Plantao.count', -1) do
-      delete :destroy, id: @planto
+      delete :destroy, id: @plantao
     end
 
     assert_redirected_to plantoes_path
