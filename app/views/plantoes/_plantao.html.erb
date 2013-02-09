@@ -3,7 +3,7 @@
     <td>
       <p class="date">
         <h4><%= l plantao.when, :format => :short %></h4>
-        <span class="label label-info" itemprop="workHours"><%= plantao.how_long %>h</span>
+        <span class="label label-info<%= '-light' if 12 == plantao.how_long %>" itemprop="workHours"><%= plantao.how_long %>h</span>
         <span class="label"><%= plantao.specialty %></span>
       </p>
     </td>
