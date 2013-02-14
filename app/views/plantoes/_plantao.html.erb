@@ -21,12 +21,15 @@
     </td>
     <td>
       <h4><span itemprop="salaryCurrency" content="BRL">R$</span><span itemprop="baseSalary"><%= plantao.how_much %></span></h4>
-      <a href="tel:<%= plantao.contactPhone %>"
+      <% phones = plantao.contactPhone.split.select {|phone| phone.gsub('-', '').to_i > 0 } %>
+      <% phones.each do |phone| %>
+      <a href="tel:<%= phone %>"
           class="contact phone"
-          data-content="<%= plantao.contactName %>, <%= plantao.contactPhone %>"
+          data-content="<%= plantao.contactName %>, <%= phone %>"
           data-placement="bottom"
           data-id="<%= plantao.id %>">
-      </a>
+        </a>
+      <% end %>
     </td>
   </article>
 </tr>
