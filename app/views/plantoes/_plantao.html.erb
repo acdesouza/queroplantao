@@ -10,11 +10,10 @@
     <td>
       <h4><%= link_to plantao.where, plantao, :itemprop=>"url" %></h4>
       <p>
-        <span itemscope itemtype="http://schema.org/ContactPoint">
-          Tratar com: <span itemprop="name"><%= plantao.contactName %></span>,
-          telefone: <span itemprop="telephone"><%= plantao.contactPhone %></span>.
-        </span>
         <%= plantao.obs %><br />
+        <span href="#" itemscope itemtype="http://schema.org/ContactPoint">
+          Tratar com: <span itemprop="name"><%= plantao.contactName %></span>
+        </span>
         <small>
           <time itemprop="datePosted" datetime="<%=plantao.created_at%>"><%= "Postado há #{distance_of_time_in_words plantao.created_at, Time.now}" %></time>
         </small>
@@ -22,6 +21,12 @@
     </td>
     <td>
       <h4><span itemprop="salaryCurrency" content="BRL">R$</span><span itemprop="baseSalary"><%= plantao.how_much %></span></h4>
+      <a href="tel:<%= plantao.contactPhone %>"
+          class="contact phone"
+          data-content="<%= plantao.contactName %>, <%= plantao.contactPhone %>"
+          data-placement="bottom"
+          data-id="<%= plantao.id %>">
+      </a>
     </td>
   </article>
 </tr>

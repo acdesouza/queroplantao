@@ -9,3 +9,17 @@
 <!--
 <p>Curta <a href="http://www.facebook.com/QueroPlantao">nossa página no facebook</a>, e receba notificações de plantões assim que eles forem anunciados.</p>
 -->
+<%= content_for :javascript do %>
+  <script type="text/javascript">
+    var options = {
+      'title': 'Dados para contato',
+      'trigger': 'click'
+    };
+    $('.contact.phone').popover(options);
+
+    $('.contact.phone').on('click', function (event) {
+        var $contactPhone = $(event.currentTarget);
+        _gaq.push(['_trackEvent', 'Telefone para contato', 'Ver', $contactPhone.data('id')]);
+    });
+</script>
+<% end %>
