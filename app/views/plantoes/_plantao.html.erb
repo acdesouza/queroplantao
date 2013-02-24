@@ -20,7 +20,7 @@
       </p>
     </td>
     <td>
-      <h4><span itemprop="salaryCurrency" content="BRL">R$</span><span itemprop="baseSalary"><%= plantao.how_much %></span></h4>
+      <h4><span itemprop="salaryCurrency" content="BRL">R$</span>&nbsp;<span itemprop="baseSalary"><%= plantao.how_much %></span></h4>
       <% phones = plantao.contactPhone.split.select {|phone| phone.gsub('-', '').to_i > 0 } %>
       <% phones.each do |phone| %>
       <a href="tel:<%= phone %>"

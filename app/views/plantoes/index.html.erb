@@ -19,7 +19,8 @@
 
     $('.contact.phone').on('click', function (event) {
         var $contactPhone = $(event.currentTarget);
-        _gaq.push(['_trackEvent', 'Telefone para contato', 'Ver', $contactPhone.data('id')]);
+        var urlPhone = '/plantoes/'+ $contactPhone.data('id') +'/telefone';
+        _gaq.push(['_trackPageview', urlPhone]);
     });
 </script>
 <% end %>
