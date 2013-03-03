@@ -17,6 +17,9 @@
     };
     $('.contact.phone').popover(options);
 
+    //FIXME só mandar o evento quando abrir.
+    //      Dar um jeito de usar um callback no popover
+    //      Ou, trocar o popover.
     $('.contact.phone').on('click', function (event) {
         var $contactPhone = $(event.currentTarget);
         var urlPhone = '/plantoes/'+ $contactPhone.data('id') +'/telefone';
