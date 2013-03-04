@@ -1,6 +1,7 @@
 QueroPlantao::Application.routes.draw do
 
   resources :advertisers, :except => [:index, :destroy]
+  resources :advertiserSession, :only=>[:create, :destroy, :new]
 
 
   match 'auth/:provider/callback', to: 'sessions#create'
