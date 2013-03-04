@@ -23,6 +23,8 @@
               <% if current_user %>
                 <li><%= link_to current_user.name, user_path(current_user) %></li>
                 <li><%= link_to "Sair", signout_path, id: "sign_out" %></li>
+              <% else %>
+                <li><%= link_to 'Crie uma conta como anunciante', new_advertiser_path, id: "advertiser_sign_in" %></li>
               <% end %>
             </ul>
           </div><!--/.nav-collapse -->

@@ -1,3 +1,5 @@
 class Advertiser < ActiveRecord::Base
-  attr_accessible :email, :password
+  attr_accessible :email, :password, :password_confirmation
+
+  has_secure_password
 end
