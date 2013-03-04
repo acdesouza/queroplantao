@@ -7,7 +7,7 @@ one:
   how_long: 1
   specialty:
   contactName:
-  contactPhone:
+  contactPhone: 55558888
   obs: MyText
 
 two:
@@ -17,5 +17,5 @@ two:
   how_long: 1
   specialty:
   contactName:
-  contactPhone:
+  contactPhone: 55558888
   obs: MyText
