@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Email:</b>
+  <%= @advertiser.email %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @advertiser.password %>
+</p>
+
+
+<%= link_to 'Edit', edit_advertiser_path(@advertiser) %> |
+<%= link_to 'Back', advertisers_path %>
