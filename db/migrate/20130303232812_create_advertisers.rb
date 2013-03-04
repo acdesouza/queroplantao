@@ -1,8 +1,8 @@
 class CreateAdvertisers < ActiveRecord::Migration
   def change
     create_table :advertisers do |t|
-      t.String :email
-      t.String :password
+      t.string :email
+      t.string :password
 
       t.timestamps
     end
