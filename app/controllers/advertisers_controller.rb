@@ -1,15 +1,4 @@
 class AdvertisersController < ApplicationController
-  # GET /advertisers
-  # GET /advertisers.json
-  def index
-    @advertisers = Advertiser.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @advertisers }
-    end
-  end
-
   # GET /advertisers/1
   # GET /advertisers/1.json
   def show
@@ -66,18 +55,6 @@ class AdvertisersController < ApplicationController
         format.html { render action: "edit" }
         format.json { render json: @advertiser.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /advertisers/1
-  # DELETE /advertisers/1.json
-  def destroy
-    @advertiser = Advertiser.find(params[:id])
-    @advertiser.destroy
-
-    respond_to do |format|
-      format.html { redirect_to advertisers_url }
-      format.json { head :no_content }
     end
   end
 end
