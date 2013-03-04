@@ -1,0 +1,19 @@
+<% flash.each do |key, value| %>
+    <div class="flash <%= key %>"><%= value %></div>
+<% end %>
+
+<%= form_tag "/advertiserSession" do  %>
+  <fieldset>
+    <div class="field control-group">
+      <%= label_tag :email %>
+      <%= email_field_tag :email %>
+    </div>
+    <div class="field control-group">
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </div>
+    <div class="actions control-group">
+      <%= submit_tag 'login', class: 'btn btn-success' %>
+    </div>
+  </fieldset>
+<% end %>
