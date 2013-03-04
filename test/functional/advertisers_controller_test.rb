@@ -3,6 +3,7 @@ require 'test_helper'
 class AdvertisersControllerTest < ActionController::TestCase
   setup do
     @advertiser = advertisers(:one)
+    session[:advertiser_id] = @advertiser.id
   end
 
   test "should get new" do

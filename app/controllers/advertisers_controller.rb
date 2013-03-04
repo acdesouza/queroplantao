@@ -1,6 +1,15 @@
 class AdvertisersController < ApplicationController
   # GET /advertisers/1
   # GET /advertisers/1.json
+
+  before_filter :redirect_if_different_user, :except=>[:create, :new]
+
+  def redirect_if_different_user
+     if current_advertiser.id!= params[:id].to_i
+        flash.now.alert ="Acesso negado"
+        redirect_to root_path 
+     end
+  end
   def show
     @advertiser = Advertiser.find(params[:id])
 
