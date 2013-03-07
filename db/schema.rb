@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20130307140601) do
     t.datetime "updated_at",      :null => false
   end
 
+  add_index "advertisers", ["email"], :name => "index_advertisers_on_email"
+
   create_table "plantoes", :force => true do |t|
     t.string   "where"
     t.date     "when"
