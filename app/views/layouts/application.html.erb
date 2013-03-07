@@ -23,9 +23,12 @@
               <% if current_user %>
                 <li><%= link_to current_user.name, user_path(current_user) %></li>
                 <li><%= link_to "Sair", signout_path, id: "sign_out" %></li>
+              <% elsif current_advertiser %>
+                <li><%= link_to current_advertiser.email, advertiser_path(current_advertiser) %></li>
+                <li><%= link_to "Sair", advertiserSession_path(current_advertiser), :method=>:delete %></li>
               <% else %>
-                <li><%= link_to 'Crie uma conta como anunciante', 
-                        new_advertiser_path, id: "advertiser_sign_in" %></li>
+                <li><%= link_to 'Crie uma conta como anunciante',
+                  new_advertiser_path, id: "advertiser_sign_in" %></li>
               <% end %>
             </ul>
           </div><!--/.nav-collapse -->
@@ -34,38 +37,29 @@
     </div>
 
     <div class="container-fluid">
-<% flash.each do |key, value| %>
-    <div class="flash <%= key %>"><%= value %></div>
-<% end %>
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
       <div class="row">
         <div class="span8">
           <%= yield %>
         </div>
         <div class="span3">
-          <% if current_user %>
+          <% if current_advertiser %>
             <p><%= link_to 'Anuncie um plantão', new_plantao_path, class: "btn btn-large btn-primary" %></p>
-          <% else %>
-            <p><%= link_to image_tag('facebook-button.png'), "/auth/facebook", id: "sign_in" %></p>
           <% end %>
-            <div class="thumbnail fb-login-button" data-show-faces="true" 
-                 data-width="200" data-max-rows="1"></div>
-            <div id="fb-root"></div>
-            <div class="span3">
+          <% if !current_user && !current_advertiser %>
+            <p><%= link_to "Login do anunciante", new_advertiserSession_path, id: "session_new", :class=> "btn" %></p>
+            <p><%= link_to 'Login do médico', '/auth/facebook', id: "sign_in", :class=> 'btn' %></p>
+          <% end %>
+          <div class="thumbnail fb-login-button" data-show-faces="true"
+            data-width="200" data-max-rows="1"></div>
+          <div id="fb-root"></div>
+          <div class="span3">
             <br>
-         </div>
-         <%if current_advertiser%>
-           <p>
-             <%= link_to "Logout", 
-                 advertiserSession_path(current_advertiser),  
-                 :method=>:delete, :class=> "btn" %>
-           </p>
-         <%else%>
-           <p>
-             <%= link_to "Login do anunciante", 
-                 new_advertiserSession_path,  
-                 id: "session_new", :class=> "btn" %>
-           </p>
-         <%end%>
+          </div>
+          <% if !current_advertiser %>
+          <% end %>
         </div>
       </div>
     </div>
