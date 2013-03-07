@@ -214,5 +214,13 @@ pt-BR:
         contactName: 'nome'
         contactPhone: 'telefone'
         obs: 'observação'
+      remuneration: 
+        when: 'quando'
+        where: 'onde'
+        how_much: 'quanto'
+        how_long: 'duração'
+        specialty: 'especialidade'
+        joker: 'coringa'
+        night_turn: 'turno da noite'
     errors:
       <<: *errors

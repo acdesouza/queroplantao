@@ -26,7 +26,9 @@ class PlantoesController < ApplicationController
   # GET /plantoes/new.json
   def new
     @plantao = Plantao.new
-
+    if params[:remuneration] then
+       @plantao.fill_with_remuneration(Remuneration.find(params[:remuneration]))
+    end
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @plantao }
