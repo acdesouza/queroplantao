@@ -1,0 +1,33 @@
+<h1>Listing remunerations</h1>
+
+<table>
+  <tr>
+    <th><%= Remuneration.human_attribute_name("how_much") %></th>
+    <th><%= Remuneration.human_attribute_name("how_long") %></th>
+    <th><%= Remuneration.human_attribute_name("night_turn") %></th>
+    <th><%= Remuneration.human_attribute_name("specialty") %></th>
+    <th><%= Remuneration.human_attribute_name("joker") %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @remunerations.each do |remuneration| %>
+  <tr>
+    <td><%= remuneration.how_much %></td>
+    <td><%= remuneration.how_long %></td>
+    <td><%= remuneration.night_turn %></td>
+    <td><%= remuneration.specialty %></td>
+    <td><%= remuneration.joker %></td>
+    <td><%= link_to 'Show', remuneration %></td>
+    <td><%= link_to 'Edit', edit_remuneration_path(remuneration) %></td>
+    <td><%= link_to 'Destroy', remuneration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Novo Plantão', new_plantao_path+"?remuneration="+remuneration.id.to_s  %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Remuneration', new_remuneration_path %>

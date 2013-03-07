@@ -1,0 +1,37 @@
+<%= form_for(@remuneration) do |f| %>
+  <% if @remuneration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@remuneration.errors.count, "error") %> prohibited this remuneration from being saved:</h2>
+
+      <ul>
+      <% @remuneration.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :how_much %><br />
+    <%= f.number_field :how_much %>
+  </div>
+  <div class="field">
+    <%= f.label :how_long %><br />
+    <%= f.number_field :how_long %>
+  </div>
+  <div class="field">
+    <%= f.label :night_turn %><br />
+    <%= f.check_box :night_turn %>
+  </div>
+  <div class="field">
+    <%= f.label :specialty %><br />
+    <%= f.text_field :specialty %>
+  </div>
+  <div class="field">
+    <%= f.label :joker %><br />
+    <%= f.check_box :joker %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

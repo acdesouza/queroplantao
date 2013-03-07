@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  how_much: 33
+  how_long: 13
+  night_turn: false
+  specialty: p 
+  joker: false
+
+two:
+  how_much: 1
+  how_long: 1
+  night_turn: false
+  specialty: c 
+  joker: false

@@ -3,6 +3,7 @@ require 'test_helper'
 class PlantoesControllerTest < ActionController::TestCase
   setup do
     @plantao = plantoes(:one)
+    @remuneration = remunerations(:one)
   end
 
   test "should get index" do
@@ -13,6 +14,11 @@ class PlantoesControllerTest < ActionController::TestCase
 
   test "should get new" do
     get :new
+    assert_response :success
+  end
+  
+  test "should get new with remuneration" do
+    get :new, :parameters =>{remuneration:@remuneration.id}
     assert_response :success
   end
 

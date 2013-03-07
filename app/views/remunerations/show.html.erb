@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>How much:</b>
+  <%= @remuneration.how_much %>
+</p>
+
+<p>
+  <b>How long:</b>
+  <%= @remuneration.how_long %>
+</p>
+
+<p>
+  <b>Night turn:</b>
+  <%= @remuneration.night_turn %>
+</p>
+
+<p>
+  <b>Specialty:</b>
+  <%= @remuneration.specialty %>
+</p>
+
+<p>
+  <b>Joker:</b>
+  <%= @remuneration.joker %>
+</p>
+
+
+<%= link_to 'Edit', edit_remuneration_path(@remuneration) %> |
+<%= link_to 'Back', remunerations_path %>
