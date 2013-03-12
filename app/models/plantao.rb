@@ -1,6 +1,8 @@
 class Plantao < ActiveRecord::Base
   attr_accessible :contactName, :contactPhone, :how_long, :how_much, :obs, :specialty, :when, :where
 
+  belongs_to :advertiser
+
   scope :to_come, where('"plantoes"."when" > ?', Date.today - 1).
                   order('"plantoes"."when" ASC, "plantoes"."how_much" DESC, "plantoes"."created_at" ASC')
   def fill_with_remuneration(remuneration)

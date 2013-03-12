@@ -10,4 +10,14 @@ class AdvertiserTest < ActiveSupport::TestCase
     refute advertiser.save
     assert advertiser.errors.include? :password_digest
   end
+
+  test 'should retieve Advertiser\`s plantoes' do
+    advertiser = advertisers(:viva_rio)
+    plantoes = advertiser.plantoes
+
+    refute plantoes.empty?
+    plantoes.each do |plantao|
+      assert advertiser == plantao.advertiser
+    end
+  end
 end

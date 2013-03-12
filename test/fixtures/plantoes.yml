@@ -1,21 +1,23 @@
+#-*- coding: utf-8 -*-
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
+pediatria:
   where:
   when: <%= Date.today %>
   how_much: 1
   how_long: 1
-  specialty:
+  specialty: 'Pediatria'
   contactName:
   contactPhone: 55558888
-  obs: MyText
+  obs: 'Plantao tranquilo'
 
-two:
-  where:
-  when:
-  how_much: 1
-  how_long: 1
-  specialty:
-  contactName:
+viva_rio_pediatria:
+  where: 'Iraja'
+  when: <% Date.today %>
+  how_much: 700
+  how_long: 12
+  specialty: 'Pediatria'
+  contactName: 'Jeorgia'
   contactPhone: 55558888
-  obs: MyText
+  obs: 'Plantão tranquilo'
+  advertiser_id: 1
