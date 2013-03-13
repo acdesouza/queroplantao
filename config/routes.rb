@@ -3,7 +3,9 @@ QueroPlantao::Application.routes.draw do
   resources :remunerations
 
 
-  resources :advertisers, :except => [:index, :destroy]
+  resources :advertisers, :except => [:index, :destroy] do
+    resources :plantoes, :controller => 'advertiser_plantoes', :only => [:index]
+  end
   resources :advertiserSession, :only=>[:create, :destroy, :new]
 
 

@@ -1,0 +1,32 @@
+<h1>Plantões para próxima quinzena</h1>
+
+<table>
+  <thead>
+    <tr>
+      <% (0..15).each do |i| %>
+        <th><%= Date.today + i.day %></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+#@plantoes_grouped: --------------------
+  #{
+    #12-03-2013 =>
+    #{
+      #12h => {p1, p2, p7},
+      #24h => {p3, p4, p5, p6}
+    #}
+    #13-03-2013 =>
+    #{
+      #12h => {},
+      #24h => {p8}
+    #}
+  #}
+#------------------------------
+    <% @plantoes_grouped.each do |how_long, when| %>
+    <tr>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
