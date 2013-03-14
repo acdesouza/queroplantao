@@ -13,7 +13,7 @@ pediatria:
 
 viva_rio_pediatria:
   where: 'Iraja'
-  when: <% Date.today %>
+  when: <%= Date.today %>
   how_much: 700
   how_long: 12
   specialty: 'Pediatria'
