@@ -1,32 +1,40 @@
 <h1>Plantões para próxima quinzena</h1>
 
-<table>
+<table border="1">
   <thead>
     <tr>
+      <th>Entrada</th>
       <% (0..15).each do |i| %>
-        <th><%= Date.today + i.day %></th>
+        <th nowrap><%= (Date.today + i.day).to_formatted_s :rfc822 %></th>
       <% end %>
     </tr>
   </thead>
 
+  <% plantoes_grouped = group_by_when_and_how_long(@plantoes) %>
   <tbody>
-#@plantoes_grouped: --------------------
-  #{
-    #12-03-2013 =>
-    #{
-      #12h => {p1, p2, p7},
-      #24h => {p3, p4, p5, p6}
-    #}
-    #13-03-2013 =>
-    #{
-      #12h => {},
-      #24h => {p8}
-    #}
-  #}
-#------------------------------
-    <% @plantoes_grouped.each do |how_long, when| %>
     <tr>
-      <td></td>
+      <td>Diurno</td>
+      <% (0..15).each do |i|
+          day = (Date.today + i.day).to_formatted_s :rfc822
+          plantoes_by_how_long = plantoes_grouped[day]
+          if (plantoes_by_how_long)
+            plantoes_by_how_long['12h'].each do |plantao| %>
+            <td><%= plantao.where %>, R$<%= plantao.how_much %>, <%= plantao.specialty %></td>
+          <% end %>
+        <% end %>
+      <% end %>
+    </tr>
+    <tr>
+      <td>Noturno</td>
+      <% (0..15).each do |i|
+          day = (Date.today + i.day).to_formatted_s :rfc822
+          plantoes_by_how_long = plantoes_grouped[day]
+          if (plantoes_by_how_long)
+            plantoes_by_how_long['24h'].each do |plantao| %>
+            <td><%= plantao.where %>, R$<%= plantao.how_much %>, <%= plantao.specialty %></td>
+          <% end %>
+        <% end %>
+      <% end %>
     </tr>
   </tbody>
 </table>
