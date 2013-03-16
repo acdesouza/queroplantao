@@ -10,6 +10,9 @@ gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'sqlite3'
+
+  # To use debugger
+  #gem 'debugger'
 end
 
 group :production do
@@ -29,6 +32,3 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
-# To use debugger
-# gem 'debugger'
