@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
   @media (min-width: 979px) {
-    padding-top: 60px;
+    padding-top: 78px;
   }
 }
 
@@ -37,3 +37,36 @@ fieldset label {
   height: 50px;
   background-size: contain;
 }
+
+/* Sobrescrevendo propriedades do navbar */
+.brand:hover {
+  background-color:#f0f0f0;
+}
+.navbar {
+  @media (max-width: 979px) {
+    margin-bottom:0px;
+  }
+}
+.navbar-inner {
+  <%#height:130px;%>
+  .container {
+    <%#padding-top:30px;%>
+  }
+  ul {
+    @media (min-width: 979px) {
+      padding-top:30px;
+    }
+  }
+}
+
+.banner {
+  background:#CCC;
+  .span12 {
+    background:blue;
+  }
+  @media (max-width: 767px) {
+    margin-left:-20px;
+    margin-right:-20px;
+  }
+}
+

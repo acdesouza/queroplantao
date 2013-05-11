@@ -9,7 +9,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
           <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
@@ -17,7 +17,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to 'Quero Plantão', root_url, class: 'brand' %>
+          <%= link_to image_tag('quero-plantao-logo.png'), root_url, class: 'brand' %>
           <div class="nav-collapse collapse" id="main-menu">
             <ul class="nav pull-right" id="main-menu-right">
               <% if current_user %>
@@ -30,8 +30,36 @@
                 <li><%= link_to 'Crie uma conta como anunciante',
                   new_advertiser_path, id: "advertiser_sign_in" %></li>
               <% end %>
+              <li><a href="">teste</a></li>
+              <li><a href="">teste</a></li>
+              <li><a href="">teste</a></li>
+              <li><a href="">teste</a></li>
             </ul>
           </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="banner">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="span12">
+            teste<br>
+            teste<br>
+            teste<br>
+            teste<br>
+            teste<br>
+            teste<br>
+            teste<br>
+            teste<br>
+            teste<br>
+            teste<br>
+            teste<br>
+            teste<br>
+            teste<br>
+            teste<br>
+            teste<br>
+          </div>
         </div>
       </div>
     </div>
@@ -43,23 +71,6 @@
       <div class="row">
         <div class="span8">
           <%= yield %>
-        </div>
-        <div class="span3">
-          <% if current_advertiser %>
-            <p><%= link_to 'Anuncie um plantão', new_plantao_path, class: "btn btn-large btn-primary" %></p>
-          <% end %>
-          <% if !current_user && !current_advertiser %>
-            <p><%= link_to "Login do anunciante", new_advertiserSession_path, id: "session_new", :class=> "btn" %></p>
-            <p><%= link_to 'Login do médico', '/auth/facebook', id: "sign_in", :class=> 'btn' %></p>
-          <% end %>
-          <div class="thumbnail fb-login-button" data-show-faces="true"
-            data-width="200" data-max-rows="1"></div>
-          <div id="fb-root"></div>
-          <div class="span3">
-            <br>
-          </div>
-          <% if !current_advertiser %>
-          <% end %>
         </div>
       </div>
     </div>
