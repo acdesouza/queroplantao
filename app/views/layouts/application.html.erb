@@ -4,11 +4,13 @@
     <meta charset="utf-8">
     <title>Quero Plantão :: <%= content_for :title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,600' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <div id="fb-root"></div>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -30,10 +32,6 @@
                 <li><%= link_to 'Crie uma conta como anunciante',
                   new_advertiser_path, id: "advertiser_sign_in" %></li>
               <% end %>
-              <li><a href="">teste</a></li>
-              <li><a href="">teste</a></li>
-              <li><a href="">teste</a></li>
-              <li><a href="">teste</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -41,40 +39,47 @@
     </div>
 
     <div class="banner">
-      <div class="container-fluid">
+      <div class="container">
         <div class="row">
-          <div class="span12">
-            teste<br>
-            teste<br>
-            teste<br>
-            teste<br>
-            teste<br>
-            teste<br>
-            teste<br>
-            teste<br>
-            teste<br>
-            teste<br>
-            teste<br>
-            teste<br>
-            teste<br>
-            teste<br>
-            teste<br>
+          <div class="span5">
+            <h1>Encontre plantões pelo <b>seu celular</b></h1>
+            <p>Clique no botão abaixo para conectar seu facebook e configurar
+              os tipos de plantões que você gostaria de receber
+              grátis por <strong>SMS, iPhone ou Android</strong></p>
+            <div class="fb-login-button">
+              <fb:login-button size="xlarge"
+              onlogin="require('./log').info('onlogin callback')">
+              Receber vagas
+              </fb:login-button>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container-fluid">
+    <%#<div class="banner small">%>
+      <%#<div class="container">%>
+        <%#<div class="row">%>
+          <%#<div class="span12">%>
+            <%#<h1>Defina sua <b>preferência</b></h1>%>
+            <%#<p>Dê alguns detalhes sobre que tipo de plantões você está buscando.</p>%>
+          <%#</div>%>
+        <%#</div>%>
+      <%#</div>%>
+    <%#</div>%>
+
+    <div class="container">
       <% flash.each do |key, value| %>
         <div class="flash <%= key %>"><%= value %></div>
       <% end %>
       <div class="row">
-        <div class="span8">
+        <div class="span12">
           <%= yield %>
         </div>
       </div>
     </div>
 
+    <footer></footer>
     <%= content_for :javascript %>
   </body>
 </html>
