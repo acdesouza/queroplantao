@@ -2,7 +2,6 @@ QueroPlantao::Application.routes.draw do
 
   resources :remunerations
 
-
   resources :advertisers, :except => [:index, :destroy] do
     resources :plantoes, :controller => 'advertiser_plantoes', :only => [:index]
   end
@@ -17,7 +16,7 @@ QueroPlantao::Application.routes.draw do
   resources :plantoes
   resources :users, :only => [:show]
 
-  root :to => 'plantoes#index'
+  root :to => 'pages#land'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
