@@ -12,9 +12,8 @@ QueroPlantao::Application.routes.draw do
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
 
-  resources :users
   resources :plantoes
-  resources :users, :only => [:show]
+  resource :user, only: [:show]
 
   root :to => 'pages#land'
 
