@@ -14,7 +14,7 @@ group :development, :test do
   gem 'sqlite3'
 
   # To use debugger
-  #gem 'debugger'
+  gem 'debugger'
 end
 
 group :production do
