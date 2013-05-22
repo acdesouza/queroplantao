@@ -1,0 +1,10 @@
+export FACEBOOK_KEY=379827335471936
+export FACEBOOK_SECRET=39d135bb3fec1dd651cf17e57ee052a2
+
+# QA
+# heroku config:set FACEBOOK_KEY=379826055460135
+# heroku config:set FACEBOOK_SECRET=4fa15915c93f33ebc0798f24f423694a
+
+# PRODUCTION
+# heroku config:set FACEBOOK_KEY=
+# heroku config:set FACEBOOK_SECRET=
