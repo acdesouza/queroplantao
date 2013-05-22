@@ -13,7 +13,7 @@ QueroPlantao::Application.routes.draw do
   match 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :plantoes
-  resource :user, only: [:show]
+  resource :user, only: [:show, :edit]
 
   root :to => 'pages#land'
 
