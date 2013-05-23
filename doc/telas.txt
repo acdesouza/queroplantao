@@ -1,0 +1,17 @@
+Página 1: Landing Page
+  Apresentação da proposta de valor para o médico
+  Botão de login para o Médico, em grande destaque
+    Login pelo Facebook
+    O retorno do login deve levar a tela de Perfil do Médico
+  Botão de login para o anunciante, sem destaque
+    Direciona para a tela de login de anunciante
+
+Página 2: Perfil médico
+  Dados Nome(recuperado do Facebook, não editável)
+        telefone(recuperado do Facebook, editável),
+        tempo de experiência/formado,
+        preferencia: adulto/pediatrico,
+        faz plantão sozinho?,
+        faz sala vermelha, na UPA?
+  Botão de gravar
+    Leva para a tela de Listagem de Plantões
