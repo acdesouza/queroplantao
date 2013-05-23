@@ -48,10 +48,9 @@
               os tipos de plantões que você gostaria de receber
               grátis por <strong>SMS, iPhone ou Android</strong></p>
             <div class="fb-login-button">
-              <fb:login-button size="xlarge"
-              onlogin="require('./log').info('onlogin callback')">
-              Receber vagas
-              </fb:login-button>
+              <%= link_to('/auth/facebook', id: "sign_in") do %>
+                <div><p id="facebook-logo">Receber vagas</p></div>
+              <% end %>
             </div>
           </div>
         </div>

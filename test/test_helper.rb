@@ -13,4 +13,20 @@ class ActiveSupport::TestCase
   def sign_in
     session[:user_id] = users(:ac).id
   end
+
+  def add_facebook_login_on_request(request_env)
+    auth_hash = OmniAuth::AuthHash.new
+    auth_hash.regular_writer('provider', 'facebook')
+    auth_hash.regular_writer('uid', '123456789')
+
+    auth_info_hash = OmniAuth::AuthHash.new
+    auth_info_hash.regular_writer('name', 'Antonio Carlos de Souza')
+    auth_hash.regular_writer('info', auth_info_hash)
+
+    auth_credentials_hash = OmniAuth::AuthHash.new
+    auth_credentials_hash.regular_writer('token', 'a1b2c3')
+    auth_credentials_hash.regular_writer('expires_at', 1374446842)
+    auth_hash.regular_writer('credentials', auth_credentials_hash)
+    request_env['omniauth.auth'] = auth_hash
+  end
 end
