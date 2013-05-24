@@ -24,7 +24,7 @@
           <div class="nav-collapse collapse" id="main-menu">
             <ul class="nav pull-right" id="main-menu-right">
               <% if current_user %>
-                <li><%= link_to current_user.name, user_path(current_user) %></li>
+                <li><%= link_to current_user.name, edit_user_path %></li>
                 <li><%= link_to "Sair", signout_path, id: "sign_out" %></li>
               <% elsif current_advertiser %>
                 <li><%= link_to current_advertiser.email, advertiser_plantoes_path(current_advertiser) %></li>
