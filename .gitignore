@@ -22,6 +22,7 @@ public/assets/
 
 # Vim temp file.
 *.swp
+Session.vim
 
 # OSX temp file.
 .DS_Store
