@@ -10,8 +10,8 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-  def sign_in
-    session[:user_id] = users(:ac).id
+  def sign_in(this_user = users(:ac))
+    session[:user_id] = this_user.id
   end
 
   def add_facebook_login_on_request(request_env)

@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(:version => 20130524030832) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
-    t.integer  "phone"
+    t.string   "phone"
     t.integer  "graduation_year"
   end
 

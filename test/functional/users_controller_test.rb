@@ -23,4 +23,25 @@ class UsersControllerTest < ActionController::TestCase
     get :edit
     assert_redirected_to controller: 'pages', action: 'land'
   end
+
+  test 'should update user details, when user is logged in' do
+    ac_user = users(:ac)
+
+    sign_in ac_user
+    put :update, user: {phone: '021 2234-5678',
+                        graduation_year: 2002 }
+
+    saved_user = User.find ac_user.id
+    assert_equal 2002, saved_user.graduation_year
+    assert_equal '021 2234-5678', saved_user.phone
+
+    assert_redirected_to plantoes_path
+  end
+
+  test 'should not update user details, when user is not logged in' do
+    put :update, user: {phone: '021 2234-5678',
+                        graduation_year: 2002 }
+
+    assert_redirected_to root_path
+  end
 end
