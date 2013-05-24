@@ -1,4 +1,3 @@
-#-*- coding: utf-8 -*-
 pt-BR:
   date:
     abbr_day_names:
@@ -204,23 +203,5 @@ pt-BR:
     errors:
       <<: *errors
   activerecord:
-    attributes:
-      plantao:
-        when: 'quando'
-        where: 'onde'
-        how_much: 'quanto'
-        how_long: 'duração'
-        specialty: 'especialidade'
-        contactName: 'nome'
-        contactPhone: 'telefone'
-        obs: 'observação'
-      remuneration: 
-        when: 'quando'
-        where: 'onde'
-        how_much: 'quanto'
-        how_long: 'duração'
-        specialty: 'especialidade'
-        joker: 'coringa'
-        night_turn: 'turno da noite'
     errors:
       <<: *errors

@@ -1,0 +1,42 @@
+#-*- coding: utf-8 -*-
+pt-BR:
+  models_and_attributes: &models_and_attributes
+    models:
+      user:
+        one: Perfil
+        other: Perfis
+    attributes:
+      user:
+        name: 'Nome'
+        graduation_year: 'Ano de graduação'
+        phone: 'Telefone'
+      plantao:
+        when: 'quando'
+        where: 'onde'
+        how_much: 'quanto'
+        how_long: 'duração'
+        specialty: 'especialidade'
+        contactName: 'nome'
+        contactPhone: 'telefone'
+        obs: 'observação'
+      remuneration:
+        when: 'quando'
+        where: 'onde'
+        how_much: 'quanto'
+        how_long: 'duração'
+        specialty: 'especialidade'
+        joker: 'coringa'
+        night_turn: 'turno da noite'
+  activerecord:
+    <<: *models_and_attributes
+  activemodel:
+    <<: *models_and_attributes
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} foi criado(a) com sucesso."
+      update:
+        notice: "%{resource_name} foi atualizado(a) com sucesso."
+      destroy:
+        notice: "%{resource_name} foi destruído(a) com sucesso."
+        alert: "%{resource_name} não pode ser destruído(a)."
