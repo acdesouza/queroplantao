@@ -1,0 +1,28 @@
+<% content_for :title, 'Perfil médico' %>
+<h1>Defina sua <b>preferência</b></h1>
+
+<p>Dê alguns detalhes sobre que tipo de plantões você está buscando.</p>
+
+
+<%= form_for @user, :class => 'form-horizontal'  do |f| %>
+  <fieldset>
+    <div class="control-group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :graduation_year %>
+      <%= f.text_field :graduation_year %>
+    </div>
+
+    <div class="control-group">
+      <%= f.submit 'Gravar', class: 'btn btn-primary' %>
+    </div>
+  </fieldset>
+<% end %>
