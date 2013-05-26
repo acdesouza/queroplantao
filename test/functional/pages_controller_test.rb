@@ -6,4 +6,10 @@ class PagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get greeting" do
+    sign_in users(:ac)
+
+    get :greeting
+    assert_response :success
+  end
 end

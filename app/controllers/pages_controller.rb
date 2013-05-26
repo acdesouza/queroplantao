@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def land
   end
+
+  def greeting
+  end
 end

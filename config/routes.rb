@@ -15,6 +15,7 @@ QueroPlantao::Application.routes.draw do
   resources :plantoes
   resource :user, only: [:show, :edit, :update]
 
+  get 'greeting' => 'pages#greeting'
   root :to => 'pages#land'
 
   # The priority is based upon order of creation:
