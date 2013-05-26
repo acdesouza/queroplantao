@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     if @user.nil?
       redirect_to root_path
     elsif @user.update_attributes params[:user]
-      redirect_to plantoes_path
+      redirect_to greeting_path
     end
   end
 

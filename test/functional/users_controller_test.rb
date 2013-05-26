@@ -35,7 +35,7 @@ class UsersControllerTest < ActionController::TestCase
     assert_equal 2002, saved_user.graduation_year
     assert_equal '021 2234-5678', saved_user.phone
 
-    assert_redirected_to plantoes_path
+    assert_redirected_to greeting_path
   end
 
   test 'should not update user details, when user is not logged in' do
