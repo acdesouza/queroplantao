@@ -1,88 +1,25 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Quero Plantão :: <%= content_for :title %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,600' rel='stylesheet' type='text/css'>
-    <%= stylesheet_link_tag    "application-pages", :media => "all" %>
+<%= content_for :title, 'Bem-vindo'  %>
 
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <div id="fb-root"></div>
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <%= link_to image_tag('quero-plantao-logo.png'), root_url, class: 'brand' %>
-          <div class="nav-collapse collapse" id="main-menu">
-            <ul class="nav pull-right" id="main-menu-right">
-              <% if current_user %>
-                <li><%= link_to current_user.name, edit_user_path %></li>
-                <li><%= link_to "Sair", signout_path, id: "sign_out" %></li>
-              <% elsif current_advertiser %>
-                <li><%= link_to current_advertiser.email, advertiser_plantoes_path(current_advertiser) %></li>
-                <li><%= link_to "Sair", advertiserSession_path(current_advertiser), :method=>:delete %></li>
-              <% else %>
-                <li><%= link_to 'Crie uma conta como anunciante',
-                  new_advertiser_path, id: "advertiser_sign_in" %></li>
-              <% end %>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
+<%= content_for :banner do %>
+  <h1>Encontre plantões pelo <b>seu celular</b></h1>
+  <p>Conecte-se com Facebook e receba notificações de plantões por <strong>SMS, iPhone ou Android</strong></p>
+  <div class="fb-login-button">
+    <%= link_to('/auth/facebook', id: "sign_in") do %>
+      <div><p id="facebook-logo">Receber plantões</p></div>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="container">
+  <% flash.each do |key, value| %>
+    <div class="flash <%= key %>"><%= value %></div>
+  <% end %>
+  <div class="row">
+    <div class="span12">
+      <div class="card">
+        <h1>Escolha que tipo de plantão você deseja fazer</h1>
+        <p class="lead">Escolha suas preferências de plantões e receba, no celular, apenas as vagas do seu interesse.</p>
       </div>
     </div>
-
-    <div class="banner">
-      <div class="container">
-        <div class="row">
-          <div class="span5">
-            <h1>Encontre plantões pelo <b>seu celular</b></h1>
-            <p>Conecte-se com Facebook e receba notificações de plantões por <strong>SMS, iPhone ou Android</strong></p>
-            <div class="fb-login-button">
-              <%= link_to('/auth/facebook', id: "sign_in") do %>
-                <div><p id="facebook-logo">Receber plantões</p></div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <%#<div class="banner small">%>
-      <%#<div class="container">%>
-        <%#<div class="row">%>
-          <%#<div class="span12">%>
-            <%#<h1>Defina sua <b>preferência</b></h1>%>
-            <%#<p>Dê alguns detalhes sobre que tipo de plantões você está buscando.</p>%>
-          <%#</div>%>
-        <%#</div>%>
-      <%#</div>%>
-    <%#</div>%>
-
-    <div class="container">
-      <% flash.each do |key, value| %>
-        <div class="flash <%= key %>"><%= value %></div>
-      <% end %>
-      <div class="row">
-        <div class="span12">
-          <%= yield %>
-          <div class="card">
-            <h1>Escolha que tipo de plantão você deseja fazer</h1>
-            <p class="lead">Escolha suas preferências de plantões e receba, no celular, apenas as vagas do seu interesse.</p>
-            <div class="fb-login-button" data-show-faces="true" data-max-rows="1" data-size="medium">Entrar no Quero Plantão</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer></footer>
-    <%= content_for :javascript %>
-  </body>
-</html>
+  </div>
+</div>

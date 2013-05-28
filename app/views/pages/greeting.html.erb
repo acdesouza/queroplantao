@@ -1,60 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Quero Plantão :: <%= content_for :title %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,600' rel='stylesheet' type='text/css'>
-    <%= stylesheet_link_tag    "application-pages", :media => "all" %>
-
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <div id="fb-root"></div>
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <%= link_to image_tag('quero-plantao-logo.png'), root_url, class: 'brand' %>
-          <div class="nav-collapse collapse" id="main-menu">
-            <ul class="nav pull-right" id="main-menu-right">
-              <% if current_user %>
-                <li><%= link_to current_user.name, edit_user_path %></li>
-                <li><%= link_to "Sair", signout_path, id: "sign_out" %></li>
-              <% elsif current_advertiser %>
-                <li><%= link_to current_advertiser.email, advertiser_plantoes_path(current_advertiser) %></li>
-                <li><%= link_to "Sair", advertiserSession_path(current_advertiser), :method=>:delete %></li>
-              <% else %>
-                <li><%= link_to 'Crie uma conta como anunciante',
-                  new_advertiser_path, id: "advertiser_sign_in" %></li>
-              <% end %>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-
-    <div class="banner">
-      <div class="container">
-        <div class="row">
-          <div class="span5">
 <%= content_for :title, 'Obrigado'  %>
-<h1><b>Obrigado</b> por se inscrever</h1>
-<div class="content">
-  <p class="lead">Você receberá notificações de plantões com suas preferências em breve.</p>
-  <p>Enquanto isso, ajude seus amigos compartilhando o <%= link_to 'Quero Plantão', root_url %></p>
-</div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <footer></footer>
-    <%= content_for :javascript %>
-  </body>
-</html>
+<%= content_for :banner do %>
+  <h1><b>Obrigado</b> por se inscrever</h1>
+  <div class="content">
+    <p class="lead">Você receberá notificações de plantões com suas preferências em breve.</p>
+    <p>Enquanto isso, ajude seus amigos compartilhando o <%= link_to 'Quero Plantão', root_url %></p>
+  </div>
+<% end %>

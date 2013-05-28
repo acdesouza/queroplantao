@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-  layout false
   skip_before_filter :authenticate_user, only: [:land]
 
   def land
